@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">  
+</head>
+<script src="login.js" defer></script>
+
+<body id="indexBody">
+<video autoplay muted loop id="homeVideo">
+    <source src="/media/homevideo.mp4" type="video/mp4">
+</video>
+
+<div id="homeLog">  
+    <h1>Welcome to the TCP Bookstore</h1>            
+    <button id="homeLogin" onclick="logIn()">Login</button>
+</div>
+
+<form id="formlog" method="post">
+    <div class="loginModal">
+        <input type="text" id="username" name="username" placeholder="Employee ID" required /><br /><br/>
+        <input type="password" id="pwd" name="pwd" placeholder="Password" required />
+        <br />
+        <button onclick="userLogin()" id="submit" value="Login" name="logButton">Login</button>
+        <input type="Reset" value="Clear" />
+    </div>
+</form>
+</body>
+</html>

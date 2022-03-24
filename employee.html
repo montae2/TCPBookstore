@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP Bookstore</title>
+    <script src="https://kit.fontawesome.com/7bf5f8ce75.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">  
+</head>
+<script src="index.js" defer></script>
+
+<body id="addBody">
+
+    <header>
+        <h1>TCP Bookstore</h1>
+        <div class="logout">
+            <a href="index.html" 
+            <i class="fa-solid fa-right-from-bracket" 
+            style="text-decoration: none; color:floralwhite;">Logout</i></a>
+          </div>
+    </header>
+
+   <div class="mBtns"> 
+        <button id="modalBtn" class="mBtn">Add Book</button>
+        <button id="modalBtn2" class="mBtn2">Booklist</button>
+    </div>
+
+<!--Add Book-->
+<div id="addModalForm" class="mForm">
+    <div class="modalContent">
+        <div class="modal-header">
+            <span id="closeBtn">&times;</span>
+            <h2>Add Rare Book</h2>
+        </div>
+        <div class="bigModalInputs" style="margin-bottom:10px;" >
+            <input type="text" name="title" id="addTitle" placeholder="Title" />
+            <input type="text" name="author" id="addAuthor" placeholder="Author" />
+            <input type="text" name="location" id="addLocation" placeholder="Location" />
+        </div>    
+        <div class="smallModalInputs"> 
+            <input type="text" name="price" id="addPrice" maxlength="15" min="0.01" max="10000" placeholder="Price" />
+            <input type="text" name=condition id="addCondition" placeholder="Rank:1=Poor/5=Excellent"/>
+        </div>  
+        <div class="modalSubmit">
+            <button id="modalSubmit" class="mSubBtn">Add</button>
+        </div>
+    </div>
+</div>
+
+<!--NEED TO ADD SEARCH FUNCTION OR BOOKLIST HERE-->
+<div id="bookListModal" class="bookForm">
+    <div class="modalContent2">
+        <div class="modal-header2">
+            <span id="closeBtn2">&times;</span>
+            <h2>Booklist</h2>
+        </div>
+        <div class="bookTable">
+            <table id="bookTable">
+                <tr>
+                <th onclick="sortTitle()">Title</th>
+                <th onclick="sortAuthor()">Author</th>
+                <th onclick="sortGenre()">Genre</th>
+                <th onclick="sortLength()">Length</th>
+                <th onclick="sortPrice()">Price</th>
+                <th onclick="sortLocation()">Store Location</th>
+                </tr>
+                <tr>
+                <td>Fundamentals of Wavelets</td>
+                <td>Goswami, Jaideva</td>
+                <td>Signal Processing</td>
+                <td>228</td>
+                <td>$133.00</td>
+                <td>2</td>
+                </tr>
+                <tr>
+                <td>Data Smart</td>
+                <td>Foreman, John</td>
+                <td>Data Science</td>
+                <td>235</td>
+                <td>$155.00</td>
+                <td>1</td>
+                </tr>
+                <tr>
+                <td>God Created the Integers</td>
+                <td>Hawking, Stephen</td>
+                <td>Mathematics</td>
+                <td>197</td>
+                <td>$221.00</td>
+                <td>2</td>
+                </tr>
+                <tr>
+                <td>Superfreakonomics</td>
+                <td>Dubner, Stephen</td>
+                <td>Economics</td>
+                <td>179</td>
+                <td>$197.00</td>
+                <td>3</td>
+                </tr>
+                <tr>
+                <td>Integration of the Indian States</td>
+                <td>Menon, V P</td>
+                <td>History</td>
+                <td>217</td>
+                <td>$134.00</td>
+                <td>3</td>
+                </tr>
+                <tr>
+                <td>How to Think Like Sherlock Holmes</td>
+                <td>Konnikova, Maria</td>
+                <td>Psychology</td>
+                <td>240</td>
+                <td>$123.00</td>
+                <td>1</td>
+                </tr>
+                <tr>
+                <td>Data Scientists at Work</td>
+                <td>Gutierrez, Sebastian</td>
+                <td>Data Science</td>
+                <td>230</td>
+                <td>$185.00</td>
+                <td>2</td>
+                </tr>
+                <tr>
+                <td>All the President's Men</td>
+                <td>Woodward, Bob</td>
+                <td>History</td>
+                <td>177</td>
+                <td>$157.00</td>
+                <td>1</td>
+                </tr>
+                <tr>
+                <td>Slaughterhouse Five</td>
+                <td>Vonnegut, Kurt</td>
+                <td>Fiction</td>
+                <td>198</td>
+                <td>$136.00</td>
+                <td>3</td>
+                </tr>
+                <tr>
+                <td>Making Software</td>
+                <td>Oram, Andy</td>
+                <td>Computer Science</td>
+                <td>232</td>
+                <td>$199.00</td>
+                <td>2</td>
+                </tr>
+                <tr>
+                <td>Raisin in the Sun, A</td>
+                <td>Hansberry, Lorraine</td>
+                <td>Fiction</td>
+                <td>173</td>
+                <td>$251.00</td>
+                <td>1</td>
+                </tr>
+                <tr>
+                <td>Machine Learning for Hackers</td>
+                <td>Conway, Drew</td>
+                <td>Data Science</td>
+                <td>233</td>
+                <td>$165.00</td>
+                <td>3</td>
+                </tr>
+                <tr>
+                <td>Introduction to Algorithms</td>
+                <td>Cormen, Thomas</td>
+                <td>Computer Science</td>
+                <td>234</td>
+                <td>$210.00</td>
+                <td>2</td>
+                </tr>
+                <tr>
+                <td>False Impressions</td>
+                <td>Archer, Jeffery</td>
+                <td>Fiction</td>
+                <td>177</td>
+                <td>$153.00</td>
+                <td>1</td>
+                </tr>
+                <tr>
+                <td>Jurassic Park</td>
+                <td>Crichton, Michael</td>
+                <td>Fiction</td>
+                <td>174</td>
+                <td>$214.00</td>
+                <td>3</td>
+                </tr>
+                <tr>
+                <td>Asami Asami</td>
+                <td>Deshpande, P L</td>
+                <td>Fiction</td>
+                <td>205</td>
+                <td>$111.00</td>
+                <td>2</td>
+                </tr>
+                <tr>
+                <td>Once There Was a War</td>
+                <td>Steinbeck, John</td>
+                <td>Nonfiction</td>
+                <td>196</td>
+                <td>$167.00</td>
+                <td>1</td>
+                </tr>
+                <tr>
+                <td>In a Free State</td>
+                <td>Naipaul, V. S.</td>
+                <td>Fiction</td>
+                <td>196</td>
+                <td>$184.00</td>
+                <td>3</td>
+                </tr>
+                <tr>
+                <td>Dylan on Dylan</td>
+                <td>Dylan, Bob</td>
+                <td>Nonfiction</td>
+                <td>197</td>
+                <td>$125.00</td>
+                <td>2</td>
+                </tr>
+                <tr>
+                <td>Crime and Punishment</td>
+                <td>Dostoevsky, Fyodor</td>
+                <td>Fiction</td>
+                <td>180</td>
+                <td>$135.00</td>
+                <td>1</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

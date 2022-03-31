@@ -21,3 +21,9 @@ Upon logging in (depending on access), the user will come to a page of options:
         - The booklist can be sorted in alphabetical or numerical order.
       Employee Info: allows the user to manage employee profiles
         - Type of access is determine here (Employee or Manager)
+
+
+LOGIN CREDENTIALS FOR SITE
+
+Employee login - username: employee  password: 1234
+Manager login - username: manager  password: 5678
